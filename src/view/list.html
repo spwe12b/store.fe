@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <link rel="stylesheet" href="../../font-awesome-4.7.0/css/font-awesome.min.css">
+        <title>商品列表页-STORE</title>
+    </head>
+    <body>
+        <%= require("html-loader!./layout/common.html")  %>
+        <%= require("html-loader!./layout/nav.html")  %>
+        <%= require("html-loader!./layout/header.html")  %>
+        <div class="crumb">
+            <div class="w">
+                <div class="crumb-con">
+                    <a class="link" href="./index.html">STORE</a>
+                    <span>></span>
+                    <span class="link-text">商品列表页</span>
+                </div>
+            </div>
+        </div>
+        <div class="page-wrap w">
+            <ul class="sort-con">
+                <li class="sort-item active" data-type="default">默认排序</li>
+                <li class="sort-item" data-type="price">
+                    <span>价格</span>
+                    <i class="fa fa-sort-asc"></i>
+                    <i class="fa fa-sort-desc"></i>
+                </li>
+            </ul>
+            <!-- list 容器 -->
+            <ul class="p-list-con">
+                
+            </ul>
+            <!-- 分页容器 -->
+            <div class="pagination"></div>
+        </div>
+        <%= require("html-loader!./layout/footer.html")  %>
+        <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script> 
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../font-awesome-4.7.0/css/font-awesome.min.css">
+    <title>个人信息修改-STORE</title>
+<body>
+    <%= require("html-loader!./layout/common.html")  %>
+<%= require("html-loader!./layout/nav.html") %>
+<%= require("html-loader!./layout/header.html") %>
+    <div class="crumb">
+        <div class="w">
+            <div class="crumb-con">
+                <a class="link" href="./index.html">STORE</a>
+                <span>></span>
+                <span class="link-text">个人中心</span>
+            </div>
+        </div>
+    </div>
+    <div class="user-center w">
+        <%= require("html-loader!./layout/nav-side.html")  %>
+        <div class="content with-nav">
+            <div class="panel">
+                <div class="panel-title">个人中心</div>
+                <div class="panel-body">
+                    <div class="loading"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+<%= require("html-loader!./layout/footer.html") %>
+<script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script> 
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <link rel="stylesheet" href="../../font-awesome-4.7.0/css/font-awesome.min.css">
+        <title>首页-STORE</title>
+    </head>
+    <body>
+        <%= require("html-loader!./layout/common.html")  %>
+        <%= require("html-loader!./layout/nav.html")  %>
+        <%= require("html-loader!./layout/header.html")  %>
+        <div class="crumb">
+            <div class="w">
+                <div class="crumb-con">
+                    <a class="link" href="./index.html">MMall</a>
+                    <span>></span>
+                    <span class="link-text"><%= htmlWebpackPlugin.options.title%></span>
+                </div>
+            </div>
+        </div>
+        <div class="page-wrap w">
+        
+        </div>
+        <%= require("html-loader!./layout/footer.html")  %>
+        <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script> 
+    </body>
+</html>

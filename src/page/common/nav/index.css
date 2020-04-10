@@ -1,0 +1,24 @@
+.nav{
+    background: #eee;
+    height: 30px;
+    line-height: 30px;
+}
+.nav .user-info{
+    float: left;
+}
+.nav .user-info .login{
+    display: none;
+}
+.nav .user-info .link{
+    margin-right: 10px;
+}
+.nav .nav-list{
+    float: right;
+}
+.nav .nav-list li{
+    float: left;
+    padding: 0 10px ;
+}
+.test-account{
+    color: #fd0000;
+}

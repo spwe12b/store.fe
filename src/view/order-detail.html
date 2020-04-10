@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>订单详情-STORE</title>
+</head>
+<body>
+    <%= require("html-loader!./layout/common.html")  %>
+<%= require("html-loader!./layout/nav.html") %>
+<%= require("html-loader!./layout/header.html") %>
+<div class="crumb">
+    <div class="w">
+        <div class="crumb-con">
+            <a href="./index.html" class="link">Raymall</a>
+            <span> ></span>
+            <span class="link-text">订单详情</span>
+        </div>
+    </div>
+</div>
+<div class="page-wrap w">
+    <%= require("html-loader!./layout/nav-side.html") %>
+    <div class="content with-nav">
+    </div>
+</div>
+<%= require("html-loader!./layout/footer.html") %>
+<script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script> 
+</body>
+</html>
