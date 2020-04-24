@@ -48,7 +48,7 @@ var addressService = {
     //删除收货地址
     deleteAddress: function (shippingId, resolve, reject) {
         store.request({
-            url: store.getServerUrl("/shipping/del.do"),
+            url: store.getServerUrl("/shipping/delete.do"),
             data: {
                 shippingId: shippingId
             },

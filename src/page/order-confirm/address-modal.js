@@ -1,8 +1,9 @@
-require("../common/index.js");
+
 var store = require("../../util/store.js");
-var cities = require("../../util/cities/index.js");
-var addressService = require("../../service/address-service.js");
+var _address = require("../../service/address-service.js");
+var _cities = require("../../util/cities/index.js");
 var templateAddressModal = require("./address-modal.string");
+
 
 var addressModal = {
     show: function (option) {
@@ -41,7 +42,7 @@ var addressModal = {
                 isUpdate = _this.option.isUpdate;
             if (!isUpdate && receiverInfo.status) {
                 //新增收货地址并且验证通过
-                addressService.save(receiverInfo.data,
+                _address.save(receiverInfo.data,
                     function (res) {
                         store.successTips("地址添加成功");
                         _this.hide();
@@ -52,9 +53,8 @@ var addressModal = {
                     });
             } else if (isUpdate && receiverInfo.status) {
                 //更新收货地址，并且验证通过
-                addressService.update(receiverInfo.data,
+                _address.update(receiverInfo.data,
                     function (res) {
-                        store.successTips("更新地址成功");
                         _this.hide();
                         typeof  _this.option.onSuccess === "function"
                         && _this.option.onSuccess(res);
@@ -63,7 +63,7 @@ var addressModal = {
                     });
             } else {
                 //验证不通过
-                store.errorTips(receiverInfo.errMsg || "好像哪里不对了~~>_<~~");
+                store.errorTips(receiverInfo.errMsg || "好像哪里不对了");
             }
         });
         //拦截事件
@@ -79,7 +79,7 @@ var addressModal = {
     },
     //加载省份信息
     loadProvince: function () {
-        var provinces = cities.getProvinces() || [],
+        var provinces = _cities.getProvinces() || [],
             $provinceSelect = this.$modalWrap.find("#receiver-province");
         //根据省份形成select html数据
         var html = this.getSelectOption(provinces);
@@ -91,7 +91,7 @@ var addressModal = {
     },
     //加载城市信息
     loadCities: function (provinceName) {
-        var cities = cities.getCities(provinceName) || [],
+        var cities = _cities.getCities(provinceName) || [],
             $citySelect = this.$modalWrap.find("#receiver-city");
         $citySelect.html(this.getSelectOption(cities));
         if (this.option.isUpdate && this.option.data.receiverCity) {

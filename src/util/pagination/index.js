@@ -5,10 +5,10 @@ var templatePagination= require("./index.string");
 var Pagination = function(){
     var _this = this;
     this.defaultOption = {
-        container       : null,
-        pageNum         : 1,
-        pageRange       : 3,
-        onSelectPage    : null
+        container: null,
+        pageNum: 1,
+        pageRange: 3,
+        onSelectPage: null
     };
     // 事件的处理
     $(document).on("click", ".pg-item", function(){
@@ -38,12 +38,12 @@ Pagination.prototype.render = function(userOption){
 };
 // 获取分页的html, |上一页| 2 3 4 =5= 6 7 8|下一页|  5/9
 Pagination.prototype.getPaginationHtml = function(){
-    var html        = "",
-        option      = this.option,
-        pageArray   = [],
-        start       = option.pageNum - option.pageRange > 0 
+    var html= "",
+        option= this.option,
+        pageArray= [],
+        start= option.pageNum - option.pageRange > 0 
             ? option.pageNum - option.pageRange : 1,
-        end         = option.pageNum + option.pageRange < option.pages
+        end= option.pageNum + option.pageRange < option.pages
             ? option.pageNum + option.pageRange : option.pages;
     // 上一页按钮的数据
     pageArray.push({
@@ -66,9 +66,9 @@ Pagination.prototype.getPaginationHtml = function(){
         disabled : !this.option.hasNextPage
     });
     html = store.renderHtml(templatePagination, {
-        pageArray   : pageArray,
-        pageNum     : option.pageNum,
-        pages       : option.pages
+        pageArray : pageArray,
+        pageNum : option.pageNum,
+        pages : option.pages
     });
     return html;
 };

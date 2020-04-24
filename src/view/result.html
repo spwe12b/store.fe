@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
     <title>操作结果-STORE</title>
 </head>
 <body>
@@ -9,6 +10,18 @@
     <%= require("html-loader!./layout/nav-simple.html") %>
         <div class="result register">
             <div class="title"><h1>恭喜你，注册成功!</h1></div>
+            <div class="content"><a href="./index.html"class="link">回到首页</a></div>
+        </div>
+        <div class="result cart-add ">
+            <div class="title"><h1>恭喜你，您的商品已成功添加到购物车!</h1></div>
+            <div class="content"><a href="./index.html"class="link">回到首页</a></div>
+        </div>
+        <div class="result pass-reset">
+            <div class="title"><h1>恭喜你，重置密码成功!</h1></div>
+            <div class="content"><a href="./index.html"class="link">回到首页</a></div>
+        </div>
+        <div class="result payment">
+            <div class="title"><h1>订单支付成功!</h1></div>
             <div class="content"><a href="./index.html"class="link">回到首页</a></div>
         </div>
     <%= require("html-loader!./layout/footer.html") %>

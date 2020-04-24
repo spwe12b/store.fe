@@ -69,7 +69,7 @@ var page = {
                     }
                 });
             }, function (errMsg) {
-                store.errorTips("打开失败咯~~>_<~~，刷新试试？");
+                store.errorTips("打开失败,刷新试试？");
             });
         });
         // 删除地址
@@ -86,6 +86,7 @@ var page = {
         });
 
     },
+    //加载收货地址
     loadAddressList: function () {
         var _this = this;
         store.showLoading(".address-con");
@@ -96,8 +97,8 @@ var page = {
         }, function (errMsg) {
         });
     },
+    //加载商品列表
     loadProductList: function () {
-        var _this = this;
         store.showLoading(".product-con");
         _order.getProductList(function (res) {
             var productHtml = store.renderHtml(templateProduct, res);

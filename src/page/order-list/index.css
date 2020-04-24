@@ -24,6 +24,9 @@
 .order-list-table .order-info .order-text{
     margin-right: 25px;
 }
+.order-list-table .order-info .order-text .order-status{
+    color: #c60023;
+}
 .order-list-table .order-info .order-number{
     font-weight: bold;
 }

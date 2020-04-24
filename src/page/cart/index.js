@@ -62,14 +62,14 @@ var page = {
         });
         // 商品数量的变化
         $(document).on("click", ".count-btn", function(){
-            var $this       = $(this),
-                $pCount     = $this.siblings(".count-input"),
-                currCount   = parseInt($pCount.val()),
-                type        = $this.hasClass("plus") ? "plus" : "minus",
-                productId   = $this.parents(".cart-table").data("product-id"),
-                minCount    = 1,
-                maxCount    = parseInt($pCount.data("max")),
-                newCount    = 0;
+            var $this= $(this),
+                $pCount= $this.siblings(".count-input"),
+                currCount= parseInt($pCount.val()),
+                type= $this.hasClass("plus") ? "plus" : "minus",
+                productId= $this.parents(".cart-table").data("product-id"),
+                minCount= 1,
+                maxCount= parseInt($pCount.data("max")),
+                newCount= 0;
             if(type === "plus"){
                 if(currCount >= maxCount){
                     store.errorTips("该商品数量已达到上限");
@@ -89,7 +89,7 @@ var page = {
             }, function(res){
                 _this.renderCart(res);
             }, function(errMsg){
-                _this.showCartError();
+                store.errorTips(errMsg);
             });
         });
         // 删除单个商品
@@ -122,7 +122,7 @@ var page = {
         $(document).on("click", ".btn-submit", function(){
             // 总价大于0，进行提交
             if(_this.data.cartInfo && _this.data.cartInfo.cartTotalPrice > 0){
-                window.location.href = "./confirm.html";
+                window.location.href = "./order-confirm.html";
             }else{
                 store.errorTips("请选择商品后再提交");
             }
@@ -130,9 +130,9 @@ var page = {
     },
     // 加载购物车信息
     loadCart : function(){
-        var _this       = this;
+        var _this= this;
         // 获取购物车列表
-        cartService.getCartList(function(res){
+        cartService.getCartList(function(res){ 
             _this.renderCart(res);
         }, function(errMsg){
             _this.showCartError();

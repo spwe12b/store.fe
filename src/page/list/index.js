@@ -10,11 +10,11 @@ var templateIndex= require("./index.string");
 var page = {
     data : {
         listParam : {
-            keyword         : store.getUrlParam("keyword")    || "",
-            categoryId      : store.getUrlParam("categoryId") || "",
-            orderBy         : store.getUrlParam("orderBy")    || "",
-            pageNum         : store.getUrlParam("pageNum")    || 1,
-            pageSize        : store.getUrlParam("pageSize")   || 20
+            keyword: store.getUrlParam("keyword")    || "",
+            categoryId: store.getUrlParam("categoryId") || "",
+            orderBy: store.getUrlParam("orderBy")    || "",
+            pageNum: store.getUrlParam("pageNum")    || 1,
+            pageSize: store.getUrlParam("pageSize")   || 20
         }
     },
     init : function(){
@@ -63,11 +63,11 @@ var page = {
     },
     // 加载list数据
     loadList : function(){
-        var _this       = this,
-            listHtml    = "",
-            listParam   = this.data.listParam,
-            $pListCon   = $(".p-list-con");
-        $pListCon.html("<div class=\"loading\"></div>");
+        var _this= this,
+            listHtml= "",
+            listParam= this.data.listParam,
+            $pListCon= $(".p-list-con");
+        store.showLoading($pListCon)
         // 删除参数中不必要的字段
         listParam.categoryId 
             ? (delete listParam.keyword) : (delete listParam.categoryId);
@@ -79,11 +79,11 @@ var page = {
             $pListCon.html(listHtml);
             _this.loadPagination({
                 hasPreviousPage : res.hasPreviousPage,
-                prePage         : res.prePage,
-                hasNextPage     : res.hasNextPage,
-                nextPage        : res.nextPage,
-                pageNum         : res.pageNum,
-                pages           : res.pages
+                prePage: res.prePage,
+                hasNextPage: res.hasNextPage,
+                nextPage: res.nextPage,
+                pageNum: res.pageNum,
+                pages: res.pages
             });
         }, function(errMsg){
             store.errorTips(errMsg);

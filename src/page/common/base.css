@@ -43,6 +43,25 @@ a{
 .link-text:hover{
     color: #e88012; 
 }
+.panel {
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #fff;
+}
+
+.panel .panel-title {
+    padding: 10px;
+    font-size: 14px;
+    color: #666;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+}
+
+.panel .panel-body {
+    padding: 10px;
+    overflow: hidden;
+}
+
 .btn{
     display: inline-block;
     height: 34px;
@@ -55,12 +74,14 @@ a{
     outline: none;
     font-size: 16px;
     border: none;
+    cursor: pointer;
 }
 .btn-mini{
     height: 25px;
     line-height: 25px;
     font-size: 12px;
     padding: 0 10px;
+    cursor: pointer;
 }
 .loading{
     margin: 10px auto;

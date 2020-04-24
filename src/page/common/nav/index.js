@@ -6,10 +6,11 @@ var cartService=require("../../../service/cart-service.js");
 var nav = {
     init : function(){
         this.bindEvent();
-        // this.loadUserInfo();
-        // this.loadCartCount();
+        this.loadUserInfo();
+        this.loadCartCount();
         return this;
     },
+
     bindEvent : function(){
         //测试
         $(".test-account").click(function(){
@@ -44,8 +45,8 @@ var nav = {
     // 加载购物车数量
     loadCartCount : function(){
         cartService.getCartCount(function(res){
-            $(".nav .cart-count").text(res || 0);
-        }, function(errMsg){
+            $(".nav .cart-count").text(res||0);
+        }, function(){
             $(".nav .cart-count").text(0);
         });
     }

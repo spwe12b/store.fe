@@ -36,6 +36,8 @@ var page = {
                 if (res == true) {
                     window.location.href = "./result.html?type=payment&orderNumber=" + _this.data.orderNumber;
                 }
+            },function(errMsg){
+
             });
         }, 5000)
 

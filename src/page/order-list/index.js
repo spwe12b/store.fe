@@ -2,7 +2,7 @@ require("../common/index.js");
 require("./index.css");
 require("../common/nav/index.js");
 require("../common/header/index.js");
-var _order = require("../../service/order-service.js");
+var orderService = require("../../service/order-service.js");
 var navSide = require("../common/nav-side/index.js");
 var Pagination = require("../../util/pagination/index.js");
 var store = require("../../util/store.js");
@@ -27,12 +27,12 @@ var page = {
         });
     },
     loadOrderList: function () {
-        var _this = this,
-            orderListHtml = "",
+        var _this = this;
+        var orderListHtml = "";
             $orderList = $(".order-list-con");
         store.showLoading($orderList);
-        _order.getOrderList(this.data.listParams, function (res) {
-            var orderListHtml = store.renderHtml(templateHtml, res);
+        orderService.getOrderList(this.data.listParams, function (res) {
+            orderListHtml = store.renderHtml(templateHtml, res);
             $orderList.html(orderListHtml);
             _this.loadpagination({
                 hasPreviousPage: res.hasPreviousPage,
@@ -43,6 +43,7 @@ var page = {
                 pages: res.pages
             });
         }, function (errMsg) {
+            store.errorTips(errMsg);
         });
     },
     //加载分页信息

@@ -65,6 +65,15 @@ var userService={
             error: reject
         });
     },
+    // 检查登录状态
+    checkLogin : function(resolve, reject){
+        store.request({
+            url: store.getServerUrl("/user/get_user_info.do"),
+            method: "POST",
+            success: resolve,
+            error: reject
+        });
+    },
     // 获取用户信息
     getUserInfo : function(resolve, reject){
         store.request({

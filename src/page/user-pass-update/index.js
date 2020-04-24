@@ -22,9 +22,9 @@ var page = {
         // 点击提交按钮后的动作
         $(document).on("click", ".btn-submit", function(){
             var userInfo = {
-                password        : $.trim($("#password").val()),
-                passwordNew     : $.trim($("#password-new").val()),
-                passwordConfirm : $.trim($("#password-confirm").val())
+                password:$.trim($("#password").val()),
+                passwordNew:$.trim($("#password-new").val()),
+                passwordConfirm:$.trim($("#password-confirm").val())
             },
             validateResult = _this.validateForm(userInfo);
             if(validateResult.status){
@@ -46,8 +46,8 @@ var page = {
     // 验证字段信息
     validateForm : function(formData){
         var result = {
-            status  : false,
-            msg     : ""
+            status: false,
+            msg: ""
         };
         // 验证原密码是否为空
         if(!store.validate(formData.password, "require")){
@@ -65,8 +65,8 @@ var page = {
             return result;
         }
         // 通过验证，返回正确提示
-        result.status   = true;
-        result.msg      = "验证通过";
+        result.status= true;
+        result.msg="验证通过";
         return result;
     }
 };

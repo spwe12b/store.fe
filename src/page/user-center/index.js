@@ -21,8 +21,9 @@ var page={
     // 加载用户信息
     loadUserInfo : function(){
         var userHtml = "";
+        store.showLoading($(".panel-body"));
         userService.getUserInfo(function(data){
-            userHtml = store.renderHtml(template,res);
+            userHtml = store.renderHtml(template,data);
             $(".panel-body").html(userHtml);
         }, function(errMsg){
             store.errorTips(errMsg);

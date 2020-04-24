@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
         <title>购物车-STORE</title>
     </head>
     <body>
@@ -10,9 +12,9 @@
         <div class="crumb">
             <div class="w">
                 <div class="crumb-con">
-                    <a class="link" href="./index.html">MMall</a>
+                    <a class="link" href="./index.html">STORE</a>
                     <span>></span>
-                    <span class="link-text"><%= htmlWebpackPlugin.options.title%></span>
+                    <span class="link-text">购物车</span>
                 </div>
             </div>
         </div>
@@ -20,5 +22,6 @@
             
         </div>
         <%= require("html-loader!./layout/footer.html")  %>
+        <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script> 
     </body>
 </html>

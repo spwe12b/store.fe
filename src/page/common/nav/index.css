@@ -9,6 +9,9 @@
 .nav .user-info .login{
     display: none;
 }
+.nav .user-info .login .username{
+    margin-right: 20px;
+}
 .nav .user-info .link{
     margin-right: 10px;
 }

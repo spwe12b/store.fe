@@ -16,8 +16,8 @@
     cursor: pointer;
 }
 .sort-con .sort-item.active{
-    background: #c60023;
-    border: 1px solid #c60023;
+    background: #ea3922;
+    border: 1px solid #ea3922;
     color: #fff;
 }
 .sort-con .sort-item .fa-sort-desc{
