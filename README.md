@@ -1,16 +1,16 @@
 
-#STORE商城前端
+STORE商城前端
 ===
 该项目没有用到前端框架，采用了common.js模块化打包，mvc分层设计模式，详细版本请见package.json
 
 开发工具
 --
 webpack：<br>  
-css-loader style-loader 加载css文件<br>  
-html-loader 加载html文件<br>  
-hogan：渲染html文件<br>  
-file-loader:处理图片<br>  
-font-awesome 简单图标<br>  
+    css-loader style-loader 加载css文件<br>  
+    html-loader 加载html文件<br>  
+    hogan：渲染html文件<br>  
+    file-loader:处理图片<br>  
+              font-awesome 简单图标<br>  
 
 项目结构
 --
