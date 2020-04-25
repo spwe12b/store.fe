@@ -31,11 +31,11 @@
 #### 主页：<br>  
      index 主页   
 #### 操作结果：<br>  
-     result 操作结果页
+     result 操作结果
 #### 商品：<br>  
      list 搜索列表 detail 商品详情  
 #### 购物车：<br>  
-     cart
+     cart 购物车
 #### 订单：<br>  
      order-confirm 订单确认 order-detail 订单详情
      order-list 订单列表  
